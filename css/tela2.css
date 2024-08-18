@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', serif;
+    overflow-x: hidden;
+
+}
+
+h2,p, h1{
+    font-style: italic;
+}
+
+h2{
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+/* div1 - fundo com degradê romântico */
+#div1 {
+    background: linear-gradient(to bottom right, #FFB6C1, #FF69B4, #FF4500); /* Degradê de rosa claro, rosa vibrante e laranja */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 100px;
+    overflow: hidden; /* Para garantir que nada vaze para fora */
+}
+
+/* div2 - com bordas arredondadas */
+#div2 {
+    background-color: #CD5C5C; /* Vermelho claro */
+    width: 80vw;
+    max-width: 1200px;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Para garantir que nada vaze para fora */
+}
+
+/* div3 - título */
+#div3 {
+    background-color: #516d6d; /* Tom gelado */
+    width: 100%;
+    padding: 90px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#div3 {
+    background-color: #ebbfbf; /* Tom gelado */
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* div4 - carrossel */
+#div4{
+    display: flex;
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    width: 90%;
+    max-width: 1000px; /* Tamanho máximo para não exceder a div2 */
+    height: 60%; /* Aumentado minimamente */
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 60px; /* Espaço para as setas */
+    margin-left: 58%;
+}
+
+/* Itens do carrossel */
+.carousel-item {
+    flex: 0 0 auto; /* Garante que cada item ocupe o mesmo espaço */
+    width: 100%;
+    max-width: 300px; /* Limita o tamanho máximo */
+    height: 300px; /* Altura fixa para manter o formato quadrado */
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 15px;
+    background-color: #eec7c7; /* Tom gelado */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre o título e o conteúdo */
+    transition: opacity 0.5s ease; /* Transição suave */
+    opacity: 0; /* Começa invisível */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.carousel-item.active {
+    opacity: 1; /* Visível */
+
+
+}
+
+.carousel-item h2 {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+.carousel-item .content {
+    margin: 0;
+}
+
+.carousel-item p {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #333;
+}
+
+.carousel-control {
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #FF4500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#prev {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 60px); 
+}
+
+#next {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% + 10px); 
+}
+
+.carousel-control:hover {
+    background-color: #FFB6C1;
+}
+
+
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+#heart-icon {
+    font-size: 36px;
+    color: red;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    background-color: #F5F5F5;
+}
+
+
+@media (max-width: 768px) {
+    #div2 {
+        width: 90vw;
+        height: 60vh;
+    }
+
+    #div4 {
+        width: 90%;
+        height: 50%;
+    }
+
+    .carousel-item {
+        max-width: 250px; 
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    #div2 {
+        width: 95vw;
+        height: 50vh;
+    }
+
+    #div4 {
+        width: 95%;
+        height: 40%;
+    }
+
+    .carousel-item {
+        max-width: 200px; 
+        height: 200px;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+    }
+
+    #heart-icon {
+        font-size: 24px;
+    }
+}
